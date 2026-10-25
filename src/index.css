@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Noto Sans Devanagari', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light;
+  --bg-cream: #FFF8ED;
+  --color-purple: #35104F;
+  --color-orange: #FF8A00;
+  --color-orange-hover: #E87500;
+  --color-orange-light: #FFF0D9;
+  --color-text-primary: #281735;
+  --color-text-secondary: #66566F;
+  --color-text-muted: #766B7D;
+  --color-border: #EAD9C5;
+  --color-green: #247447;
+  --color-green-light: #E8F5EE;
+  --color-red: #B42318;
+  --color-red-light: #FEE4E2;
+}
+
+body {
+  background-color: #FFF8ED;
+  color: #281735;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #35104F;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+/* Premium Indian Festive Cards */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid #EAD9C5;
+}
+
+.glass-card {
+  background: #FFFFFF;
+  border: 1px solid #EAD9C5;
+  box-shadow: 0 2px 8px -2px rgba(53, 16, 79, 0.06), 0 1px 4px -1px rgba(53, 16, 79, 0.04);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: #FF8A00;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -3px rgba(53, 16, 79, 0.1), 0 3px 6px -2px rgba(53, 16, 79, 0.05);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FF8A00 0%, #D97706 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.purple-gradient-text {
+  background: linear-gradient(135deg, #35104F 0%, #4E1D70 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Explicit aspect ratio utility */
+.aspect-4\/3 {
+  aspect-ratio: 4 / 3;
+}
+.aspect-1\/1 {
+  aspect-ratio: 1 / 1;
+}
+
+/* Touch friendly scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #EADBC8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF8A00;
+}
+
+/* Mobile tap highlight reset */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Subtle festive particle floats */
+@keyframes festive-float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-8px) scale(1.15);
+    opacity: 1;
+  }
+}
+
+.animate-festive-float {
+  animation: festive-float 4s ease-in-out infinite;
+}
+
+.animate-festive-float-delay {
+  animation: festive-float 5s ease-in-out 1.5s infinite;
+}
+
+/* Smooth modal slide up */
+@keyframes modal-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-modal-in {
+  animation: modal-slide-up 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
